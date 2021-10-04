@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    platform: "linux/arm64"
     links:
       - api
     depends_on:
@@ -20,4 +19,3 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    platform: "linux/arm64"

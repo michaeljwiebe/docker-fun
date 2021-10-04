@@ -19,9 +19,7 @@ const App: React.FunctionComponent = () => {
     evt.preventDefault();
     if (isDomainValid()) {
       setIsCalled(true);
-      axios.get(`http://localhost:8080/?domain=${domain}`) // CORS error CorsDisabledScheme
-      // axios.get(`http://node-server:8080/?domain=${domain}`) // err: name not resolved
-      // axios.get(`node-server://?domain=${domain}`) // CORS
+      axios.get(`http://localhost:8080/?domain=${domain}`)
         .then(({data}) => {
           setResult(data);
         })
