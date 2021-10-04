@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: "react-whois-app"
+    build:
+      context: "./frontend"
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    platform: "linux/arm64"
+    links:
+      - api
+    depends_on:
+      - api
+  api:
+    container_name: "node-server"
+    build:
+      context: "./api"
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    platform: "linux/arm64"
